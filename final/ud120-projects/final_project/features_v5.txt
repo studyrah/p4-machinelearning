@@ -1,0 +1,9 @@
+poi
+bonus
+exercised_stock_options
+expenses
+from_this_person_to_poi
+long_term_incentive
+other
+restricted_stock
+total_stock_value

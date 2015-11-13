@@ -28,13 +28,16 @@ print "numpeople: " + str(len(enron_data))
 
 #For each person, how many features are available?
 maxfeatures = 0
+feat = set()
 for person in enron_data.keys():
     features = enron_data[person].keys()
     
     if len(features) > maxfeatures:
         maxfeatures = len(features)
-
+    
+    feat.update(set(features))
 print "maxfeatures: " + str(maxfeatures)
+print feat
 # 21
 
 
@@ -127,4 +130,52 @@ label, features = targetFeatureSplit(data_array)
 #print data_array
 print label
 #print features
+
+# How many people have NaN for their total payments?
+numnantotalpayments = 0
+numtotalpeople = 0.0
+for person in enron_data.keys():
+    numtotalpeople += 1
+    if enron_data[person]['total_payments'] == 'NaN':
+        numnantotalpayments += 1
+
+percentnantotalpayments = (numnantotalpayments / numtotalpeople) * 100.0
+
+print "numtotalpeople: " + str(numtotalpeople)        
+print "numnantotalpayments: " + str(numnantotalpayments)
+print "percentnantotalpayments: " + str(percentnantotalpayments)
+
+#What percentage of POI's have NaN totalpaments?
+numpoi = 0.0
+poinantotalpayments = 0.0
+for person in enron_data.keys():
+    if enron_data[person]['poi'] == True:
+        numpoi += 1
+        
+        if enron_data[person]['total_payments'] == 'NaN':
+            poinantotalpayments += 1
+
+percentpoinantotalpayments = (poinantotalpayments / numpoi) * 100.0
+
+print "numpoi: " + str(numpoi)
+print "poinantotalpayments: " + str(poinantotalpayments)
+print "percentpoinantotalpayments: " + str(percentpoinantotalpayments)
+
+
+# which features hava missing values?
+print ""
+
+nan_features = {}
+
+for person, features in enron_data.iteritems():
+    for feature, value in features.iteritems():
+        if value == 'NaN':
+            nan_features[feature] = nan_features.get(feature, 0) + 1
+            
+for feature, count in nan_features.iteritems():
+    print feature + ": " + str(count)
+
+print "num features with missing values: " + str(len(nan_features))
+
+
 

@@ -1,0 +1,72 @@
+Usage
+=====
+
+python poi_id.py
+
+Please note that this version works with a modified dataset (final_project_dataset_modified.pkl) and features (final_project_features_list_modified.pkl). The modified dataset contains a new feature 'mentions' which is generated from the email bodies, this has been pre-generated for speed (takes ~ 10 minutes) by executing 'add_mention_features.py' as a standalone app.
+
+Alternatively you can execute the following command which generates the new feature in line (using 'add_mention_features.py' as a library). This assumes though that the email corpus is present in directory - './enron_mail_20110402/'. This is not provided (by me) in github as the dataset is so large.
+
+python poi_id_ada_mentions.py features.txt
+
+
+Files
+=====
+
+Documents
+---------
+
+* documents/report.pdf - answers to questions
+* documents/results.ods/xls - for completeness, table detailing output perfomance for different combinations of algorithm/features
+
+
+Implementations
+---------------
+
+* poi_id.py - final version of my poi_id
+
+* poi_id_ada_mentions_pregen.py - as per poi_id.py
+* poi_id_ada_mentions.py - with in line 'mentions' feature generation
+
+For compleness, other implementations I tried:
+
+* poi_id_dt.py
+* poi_id_kn.py
+* poi_id_nb.py
+* poi_id_rf.py
+* poi_id_svm.py
+
+
+Feature Generation
+------------------
+
+* add_features.py - library to add a feature combining email to/from and shared receipt (not used in final version)
+* add_mention_features.py - library to add feature counting poi mentions in sent email bodies
+* poi_identifiers.py - helper dict mapping known poi's to their names and email addresses for feature generation
+
+
+Features
+--------
+
+Various combinations of features to use:
+
+* features.txt - final chosen set of features
+* features_v0.txt
+* features_v1.txt
+* features_v2.txt
+* features_v3.txt
+* features_v4.txt - as per features.txt
+* features_v5.txt
+
+
+Outlier Analysis/Removal
+------------------------
+
+* enron_outliers.py - script used to investigate outliers (run independently ahead of poi_id.py)
+* outlier_cleaner.py - library used to actually remove outliers
+
+
+Feature Re-Scaling
+------------------
+
+* rescale_features.py - library used for min max feature re-scaling (not used in final version)

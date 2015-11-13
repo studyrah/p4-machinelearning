@@ -64,8 +64,8 @@ for c in c_values:
     print "26: " + str(pred[26])
     print "50: " + str(pred[50])    
     
-    print "Chris: " + str(len(pred[pred == 1])
-    print "Sara: " + str(len(pred[pred == 0])
+    print "Chris: " + str(len(pred[pred == 1]))
+    print "Sara: " + str(len(pred[pred == 0]))
     
     from sklearn.metrics import accuracy_score
     
