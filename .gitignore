@@ -1,4 +1,6 @@
-src/enron_data
+src
 original_download
 final/ud120-projects/maildir
+final/ud120-projects/final_project/enron_mail_20110402
 final/ud120-projects/feature_selection
+**/*.pyc
