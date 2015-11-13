@@ -1,0 +1,5 @@
+http://scikit-learn.org/stable/ - extensively used for api information
+https://www.python.org/doc/ - extensively usef for api information
+https://en.wikipedia.org/wiki/Enron - used for checking information (e.g. dodgy project names)
+http://stackoverflow.com/questions/19393576/filter-items-in-a-dict-of-dict - filtering dict of dicts on value (see enron_outliers.py)
+I hereby confirm that this submission is my work. I have cited above the origins of any parts of the submission that were taken from Websites, books, forums, blog posts, github repositories, etc.
