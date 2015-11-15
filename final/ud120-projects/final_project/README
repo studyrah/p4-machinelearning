@@ -5,7 +5,9 @@ python poi_id.py
 
 Please note that this version works with a modified dataset (final_project_dataset_modified.pkl) and features (final_project_features_list_modified.pkl). The modified dataset contains a new feature 'mentions' which is generated from the email bodies, this has been pre-generated for speed (takes ~ 10 minutes) by executing 'add_mention_features.py' as a standalone app.
 
-Alternatively you can execute the following command which generates the new feature in line (using 'add_mention_features.py' as a library). This assumes though that the email corpus is present in directory - './enron_mail_20110402/'. This is not provided (by me) in github as the dataset is so large.
+Alternatively you can execute the following command which generates the new feature in line (using 'add_mention_features.py' as a library). This assumes though that the email corpus is present in directory - './enron_mail_20110402/'. This is not provided (by me) in github as the dataset is so large. 
+
+Similarly './emails_by_address' contains over 1000 files and thus breaks Udacity file submission limit and is omitted. Again as these are provided by Udacity it is assumed that the assessor has free and easy access to these datasets.
 
 python poi_id_ada_mentions.py features.txt
 
