@@ -2,5 +2,6 @@ src
 original_download
 final/ud120-projects/maildir
 final/ud120-projects/final_project/enron_mail_20110402
+final/ud120-projects/final_project/emails_by_address
 final/ud120-projects/feature_selection
 **/*.pyc
